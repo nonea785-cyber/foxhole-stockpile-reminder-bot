@@ -5,7 +5,7 @@ import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from stockpile_store import StockpileStore, warning_due
+from foxhole_buddy.core.store import StockpileStore, warning_due
 
 
 class StockpileStoreTest(unittest.TestCase):
