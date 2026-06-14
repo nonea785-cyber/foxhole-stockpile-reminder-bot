@@ -34,17 +34,22 @@ python main.py
 
 ### Or using Docker (Recommended)
 
-You can run the pre-built Docker image directly from GitHub Container Registry:
+You can run the pre-built Docker image directly from GitHub Container Registry. 
+*Note: If the repository is private, you must first authenticate with GitHub using a Personal Access Token (PAT) with `read:packages` permission.*
 
 ```bash
-# 1. Create a directory for the bot data
+# 1. (Private Repos Only) Authenticate Docker with GitHub
+docker login ghcr.io -u YOUR_GITHUB_USERNAME
+# When prompted for a password, paste your GitHub PAT
+
+# 2. Create a directory for the bot data
 mkdir data
 
-# 2. Create your .env file
+# 3. Create your .env file
 touch .env
 # (Edit .env and add your DISCORD_TOKEN)
 
-# 3. Run the container
+# 4. Run the container
 docker run -d \
   --name foxhole-buddy \
   --env-file .env \
