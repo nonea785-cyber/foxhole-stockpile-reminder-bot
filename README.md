@@ -4,7 +4,7 @@ A Discord logistics bot for Foxhole regiments. Track stockpile timers, coordinat
 
 ## Features
 
-- **📦 Stockpile Timers** — Track reserve stockpiles with a 50-hour expiry window. Alerts fire at 24h, 6h, 2h, and after expiry. Each card has a persistent **Mark Refreshed** button.
+- **📦 Stockpile Timers** — Track reserve stockpiles with a 48-hour expiry window. Alerts fire at 24h, 6h, 2h, and after expiry. Each card has a persistent **Mark Refreshed** button.
 - **⛏️ Resource Management** — Post farming needs, pledge contributions, log farmed amounts, and track progress on a live Needs Board.
 - **📋 Base Inventory** — Add, remove, and list materials stored at your main base. Quantities support decimals and are kept clean (auto-deletes at zero).
 - **🏭 Factory Alarms** — Set personal reminders for facility production queues. Choose between a 3-ping alarm (10m before, at completion, 10m after) or a 1-ping alarm (at completion only). Timers round to the nearest 5-minute interval.

@@ -9,7 +9,7 @@ from foxhole_buddy.core.store import StockpileStore, warning_due
 
 
 class StockpileStoreTest(unittest.TestCase):
-    def test_create_sets_expiry_to_50_hours(self) -> None:
+    def test_create_sets_expiry_to_48_hours(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             now = datetime(2026, 6, 5, 0, 0, tzinfo=timezone.utc)
             store = StockpileStore(Path(tmp) / "stockpiles.json")
@@ -24,7 +24,7 @@ class StockpileStoreTest(unittest.TestCase):
                 now=now,
             )
 
-            self.assertEqual(stockpile.expires_datetime, now + timedelta(hours=50))
+            self.assertEqual(stockpile.expires_datetime, now + timedelta(hours=48))
 
     def test_refresh_resets_warnings_and_expiry(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -45,7 +45,7 @@ class StockpileStoreTest(unittest.TestCase):
 
             refreshed = store.refresh(stockpile.id, user_id=4, now=refresh_time)
 
-            self.assertEqual(refreshed.expires_datetime, refresh_time + timedelta(hours=50))
+            self.assertEqual(refreshed.expires_datetime, refresh_time + timedelta(hours=48))
             self.assertFalse(refreshed.warned_24h)
             self.assertEqual(refreshed.last_refreshed_by_user_id, 4)
 
@@ -60,7 +60,7 @@ class StockpileStoreTest(unittest.TestCase):
                 location="Port",
                 stockpile_type="seaport",
                 user_id=3,
-                now=now - timedelta(hours=49),
+                now=now - timedelta(hours=46.5),
             )
 
             self.assertEqual(warning_due(stockpile, now), "2h")

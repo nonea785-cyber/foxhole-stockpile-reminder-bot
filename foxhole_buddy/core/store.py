@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Iterable
 
 
-EXPIRY_HOURS = 50
+EXPIRY_HOURS = 48
 WARNING_THRESHOLDS = {
     "24h": timedelta(hours=24),
     "6h": timedelta(hours=6),

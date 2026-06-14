@@ -65,7 +65,7 @@ def register_commands(bot) -> None:
         embed.add_field(
             name="Features",
             value=(
-                "📦 **Stockpile** — Track reserve timers (50h expiry, alerts at 24h/6h/2h)\n"
+                "📦 **Stockpile** — Track reserve timers (48h expiry, alerts at 24h/6h/2h)\n"
                 "⛏️ **Resources** — Post needs, pledge farming, log progress\n"
                 "📋 **Inventory** — Add/remove/list base materials\n"
                 "🏭 **Factories** — Set 1-ping or 3-ping queue alarms (5m intervals)"
